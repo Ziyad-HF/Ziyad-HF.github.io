@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ziyad@ualberta:~ · Ziyad ElFayoumy</title>
+  <meta name="description" content="Ziyad ElFayoumy, Medical & Transportation AI Researcher. An interactive terminal portfolio: type 'help'.">
+  <meta property="og:title" content="Ziyad ElFayoumy · Medical & Transportation AI Researcher">
+  <meta property="og:image" content="../shared/assets/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="green">
+  <div class="crt" aria-hidden="true"></div>
+  <div class="window">
+    <header class="titlebar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="title">ziyad@ualberta: ~ — zsh — <span id="cols">120×40</span></span>
+      <span class="tb-actions">
+        <a class="tb-btn" href="../" title="Open the regular website">plain view ↗</a>
+        <button type="button" id="skip" class="tb-btn">skip intro</button>
+        <button type="button" id="theme-btn" class="tb-btn" title="Change phosphor colour">phosphor</button>
+      </span>
+    </header>
+    <main id="screen" class="screen" tabindex="-1">
+      <div id="out" class="out" aria-live="polite"></div>
+      <form id="prompt-form" class="prompt-line" autocomplete="off">
+        <label for="cmd" class="ps1"><span class="u">ziyad</span><span class="at">@</span><span class="h">ualberta</span><span class="p">:~$</span></label>
+        <input id="cmd" class="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="Type a command, for example help">
+      </form>
+    </main>
+    <nav class="dock" aria-label="Quick commands" id="dock"></nav>
+    <footer class="statusbar">
+      <span>● online · Edmonton, AB</span>
+      <span id="clock"></span>
+      <span class="hide-sm">Tab: autocomplete · ↑↓: history · Ctrl+L: clear</span>
+    </footer>
+  </div>
+  <script>window.ASSET_BASE = "../shared/";</script>
+  <script src="../shared/content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
