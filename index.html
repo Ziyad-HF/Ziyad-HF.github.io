@@ -2,29 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Ziyad ElFayoumy · Medical & Transportation AI Researcher</title>
-  <meta name="description" content="Ziyad ElFayoumy, Graduate Research Fellow at the University of Alberta. From Cairo to Edmonton: computer vision and multimodal AI for healthcare and transportation.">
-  <link rel="icon" href="shared/assets/profile.jpg">
+  <meta name="description" content="Ziyad ElFayoumy, Graduate Research Fellow at the University of Alberta. Computer vision and multimodal AI that supports neurosurgeons and keeps winter roads safe.">
+  <meta name="theme-color" content="#f7f5f0">
+  <link rel="canonical" href="https://ziyad-elfayoumy.is-a.dev/">
+  <link rel="icon" href="shared/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="shared/assets/profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziyad-elfayoumy.is-a.dev/">
   <meta property="og:title" content="Ziyad ElFayoumy · Medical & Transportation AI Researcher">
-  <meta property="og:image" content="shared/assets/profile.jpg">
+  <meta property="og:description" content="Computer vision and multimodal AI for healthcare and transportation. Graduate Research Fellow at the University of Alberta.">
+  <meta property="og:image" content="https://ziyad-elfayoumy.is-a.dev/shared/assets/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/assets/icons/phosphor.css">
   <link rel="stylesheet" href="style.css">
   <script>try{var m=localStorage.getItem("zef-atlas-mode");if(m)document.documentElement.dataset.mode=m;}catch(e){}</script>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top"><span class="pin" aria-hidden="true"></span>Ziyad ElFayoumy</a>
-    <nav aria-label="Main"><ul>
-      <li><a href="#journey">Journey</a></li><li><a href="#work">Work</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#projects">Projects</a></li><li><a href="#recognition">Recognition</a></li><li><a href="#contact">Contact</a></li>
-    </ul></nav>
-    <button class="tech-toggle" id="tech-toggle" type="button" aria-pressed="false">Show technical details</button>
-    <a class="term-link" href="terminal/" title="Open the interactive terminal version">&gt;_ terminal mode</a>
-    <button class="mode" id="mode" type="button" aria-label="Switch day/night">☀︎</button>
+  <a class="skip" href="#app">Skip to content</a>
+  <header class="nav-shell">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Ziyad ElFayoumy, back to top"><span class="pin" aria-hidden="true"></span><span class="brand-name">Ziyad ElFayoumy</span></a>
+      <nav class="nav-links" aria-label="Main"><ul>
+        <li><a href="#journey">Journey</a></li><li><a href="#work">Work</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#projects">Projects</a></li><li><a href="#recognition">Recognition</a></li><li><a href="#contact">Contact</a></li>
+      </ul></nav>
+      <div class="nav-tools">
+        <button class="tech-toggle" id="tech-toggle" type="button" aria-pressed="false">Show technical details</button>
+        <a class="term-link" href="terminal/" title="Open the interactive terminal version"><i class="ph ph-terminal-window" aria-hidden="true"></i><span>Terminal</span></a>
+        <button class="icon-btn" id="mode" type="button" aria-label="Switch between light and dark"><i class="ph ph-sun" aria-hidden="true"></i></button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel"><span class="bars" aria-hidden="true"><i></i><i></i></span></button>
+      </div>
+    </div>
   </header>
-  <main id="app"></main>
+  <div class="menu-panel" id="menu-panel" hidden>
+    <nav aria-label="Mobile"><ul>
+      <li><a href="#journey">Journey</a></li><li><a href="#work">Work</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#projects">Projects</a></li><li><a href="#recognition">Recognition</a></li><li><a href="#faq">Questions</a></li><li><a href="#contact">Contact</a></li><li><a href="terminal/">Terminal version</a></li>
+    </ul></nav>
+  </div>
+  <main id="app" tabindex="-1"></main>
   <script>window.ASSET_BASE = "shared/";</script>
   <script src="shared/content.js"></script>
   <script src="shared/world.js"></script>

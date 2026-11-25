@@ -14,20 +14,20 @@
   <section class="hero" id="top"><div class="wrap">
     <div class="hero-grid">
       <div class="reveal">
-        <span class="kicker"><span class="live"></span>${esc(S.role)}</span>
-        <h1>${esc(first)} <em>${esc(last)}</em></h1>
+        <span class="kicker caption-1"><span class="live"></span>${esc(S.role)}</span>
+        <h1 class="heading-1 hero-h1">${esc(first)}<br>${esc(last)}</h1>
         <p class="lede">${esc(S.tagline)}</p>
-        <div class="cta"><a class="btn primary" href="#journey">Follow the journey →</a><a class="btn" href="#projects">Projects</a><button class="btn" type="button" id="qv-open">⚡ 30-second summary</button>${S.links.resume ? ext(S.links.resume, "Resume ↓", "btn") : ""}</div>
+        <div class="cta"><a class="btn primary" href="mailto:${esc(S.links.email)}"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Get in touch</a><button class="btn ghost" type="button" id="qv-open"><i class="ph ph-timer" aria-hidden="true"></i>Read the 30 second summary</button>${S.links.resume ? ext(S.links.resume, "Resume", "btn ghost") : ""}</div>
       </div>
       <div class="portrait reveal">
         <img src="${esc(S.photo)}" alt="Portrait of ${esc(S.name)} in Edmonton" width="600" height="750">
         <a class="float f1" href="#recognition"><b>1st / 259</b>Dell Envision the Future</a>
         <a class="float f2" href="#work"><b>TRB 2027</b>paper accepted to present</a>
-        <a class="float f3" href="#journey"><b>Edmonton ← Cairo</b><span class="muted">via Hangzhou</span></a>
+        <a class="float f3" href="#journey"><b>Edmonton, from Cairo</b><span class="muted">via Hangzhou</span></a>
       </div>
     </div>
-    <div class="stats">${S.stats.map((s, i) => `<a class="stat reveal" href="${esc(s.href || "#work")}"><span class="s-k">${["Now researching", "Next: presenting", "Recognized", "Built"][i] || ""}</span><div class="v" data-count="${esc(s.value)}">${esc(s.value)}</div><div class="l">${esc(s.label)}</div><span class="s-go">→</span></a>`).join("")}</div>
-    <div class="orgs reveal"><span>Learned &amp; worked at</span><ul>${["University of Alberta", "Kasr Al Ainy · Cairo University", "Siemens EDA", "Siemens Healthineers", "Westlake University", "Dar Al Fouad Hospital"].map((o) => `<li>${o}</li>`).join("")}</ul></div>
+    <div class="stats">${S.stats.map((s, i) => `<a class="stat reveal" href="${esc(s.href || "#work")}"><span class="s-k">${["Now researching", "Next: presenting", "Recognized", "Built"][i] || ""}</span><div class="v" data-count="${esc(s.value)}">${esc(s.value)}</div><div class="l">${esc(s.label)}</div><i class="ph ph-arrow-right s-go" aria-hidden="true"></i></a>`).join("")}</div>
+    <div class="orgs reveal"><span>Learned and worked at</span><ul>${["University of Alberta", "Kasr Al Ainy · Cairo University", "Siemens EDA", "Siemens Healthineers", "Westlake University", "Dar Al Fouad Hospital"].map((o) => `<li>${o}</li>`).join("")}</ul></div>
   </div></section>`;
 
   // ---------- journey ----------
@@ -40,7 +40,7 @@
   const journey = `
   <section id="journey" class="alt"><div class="wrap">
     <p class="sec-k">The journey</p>
-    <h2>Three cities, <em>one thread.</em></h2>
+    <h2>Three cities, <span class="hl">one thread.</span></h2>
     <p class="sec-intro">Starting where I am now, in Edmonton, and travelling back through a summer in Hangzhou to where it all began in Cairo. Scroll the chapters and the map follows.</p>
     <div class="journey">
       <div class="map-sticky"><div class="map-card">
@@ -86,13 +86,13 @@
   const work = `
   <section id="work"><div class="wrap">
     <p class="sec-k">The work</p>
-    <h2>Two fields, <em>one method.</em></h2>
+    <h2>Two fields, <span class="hl">one method.</span></h2>
     <p class="sec-intro">My research sits in healthcare and in transportation. The domains differ; the way I work does not.</p>
     <div class="fields">
       <div class="field reveal" style="--c:var(--med)"><span class="tag">Medical AI</span><h3>Helping clinicians decide</h3>
-        ${item(kasr.dates + " · " + kasr.org, kasr.role, esc(kasr.story) + " <a href=\"#pipeline\">See how it works ↓</a>", "1 3")}
+        ${item(kasr.dates + " · " + kasr.org, kasr.role, esc(kasr.story) + " <a href=\"#pipeline\">See how it works</a>", "1 3")}
         ${item(autism.meta, autism.title, autism.pitch + " " + autism.plainResult, "1 3")}
-        ${item("Clinical engineering · 2023–2024", "Hands-on with medical devices", "Rotated through hospital departments, calibrated medical devices, and joined Siemens Healthineers engineers on hospital service calls.", "")}
+        ${item("Clinical engineering · 2023–2024", "Hands on with medical devices", "Rotated through hospital departments, calibrated medical devices, and joined Siemens Healthineers engineers on hospital service calls.", "")}
       </div>
       <div class="method reveal"><div class="arrows" aria-hidden="true">→</div><div class="core"><h3>The method</h3><p class="hint">Hover or tap a step to see where I used it.</p><ol>
         <li><button type="button" data-step="1">Get the data right: clean, well-labelled data before any model.</button></li>
@@ -136,10 +136,10 @@
   const timeline = `
   <section id="timeline" class="alt"><div class="wrap">
     <p class="sec-k">Everything, on one line</p>
-    <h2>${EV.length} milestones, <em>one click each.</em></h2>
+    <h2>${EV.length} milestones, <span class="hl">one click each.</span></h2>
     <p class="sec-intro">Every job, paper, award and role since 2020, newest first. Filter by type, then click any milestone for details and evidence.</p>
     <div class="legend tl-filter" role="group" aria-label="Filter milestones">${Object.entries(TYPES).map(([k, [n, c]]) => `<button data-type="${k}" aria-pressed="true" style="--c:${c}"><i></i>${n}</button>`).join(" ")}</div>
-    <p class="scroll-hint">Scroll sideways for earlier years →</p>
+    <p class="scroll-hint"><i class="ph ph-arrows-horizontal" aria-hidden="true"></i>Scroll sideways for earlier years</p>
     <div class="tl-wrap">
       <div class="tl-years">${years.map((y) => `<div class="tl-col"><div class="tl-y">${y}</div>${EV.map((e, i) => [e, i]).filter(([e]) => e.y === y).map(([e, i]) => `<button class="tl-ev" data-i="${i}" data-type="${e.type}" style="--c:${TYPES[e.type][1]}"><span class="tl-m">${esc(e.date.split(" ")[0].length === 3 ? e.date.split(" ")[0] : "")}</span>${esc(e.title)}${e.org ? `<span class="tl-o">${esc(e.org)}</span>` : ""}</button>`).join("")}</div>`).join("")}</div>
       <aside class="tl-detail" id="tl-detail" aria-live="polite"></aside>
@@ -152,13 +152,13 @@
     const c1 = CAT[p.cats[0]][1], c2 = CAT[p.cats[1] || p.cats[0]][1];
     return `<article class="pcard${big ? " big" : ""} reveal" data-cats="${p.cats.join(" ")}" data-text="${esc((p.title + " " + p.pitch + " " + p.desc + " " + p.tags.join(" ")).toLowerCase())}" style="--c1:${c1};--c2:${c2}">
       ${big ? (p.image ? `<img class="zoom${p.imageFit === "contain" ? " contain" : ""}" src="${esc(p.image)}" alt="${esc(p.imageAlt || p.title)}" loading="lazy">` : `<div class="visual">${esc(p.tags.slice(0, 3).join(" · "))}</div>`) : `<div class="stripe"></div>`}
-      <div class="pb"><span class="meta">${esc(p.meta)}</span><h3>${esc(p.title)}</h3><p>${esc(p.pitch)}</p>${p.plainResult ? `<div class="result">${esc(p.plainResult)}</div>` : ""}
-      ${tech(`<p>${esc(p.desc)}</p><div class="chips">${p.tags.map((t) => `<button type="button" class="chip tagbtn" data-tag="${esc(t)}">${esc(t)}</button>`).join("")}</div>`, "How it works")}${ext(p.link, "Open project →", "go")}</div></article>`;
+      <div class="pb"><span class="meta">${esc(p.meta)}</span><h3>${esc(p.title)}</h3><p>${esc(p.pitch)}</p>${p.plainResult ? `<p class="result"><i class="ph ph-trophy" aria-hidden="true"></i><span>${esc(p.plainResult)}</span></p>` : ""}
+      ${tech(`<p>${esc(p.desc)}</p><div class="chips">${p.tags.map((t) => `<button type="button" class="chip tagbtn" data-tag="${esc(t)}">${esc(t)}</button>`).join("")}</div>`, "How it works")}${ext(p.link, `Open project <i class="ph ph-arrow-right" aria-hidden="true"></i>`, "go")}</div></article>`;
   };
   const projects = `
   <section id="projects" class="alt"><div class="wrap">
     <p class="sec-k">The atlas</p>
-    <h2>${S.projects.length} projects, <em>mapped by field.</em></h2>
+    <h2>${S.projects.length} projects, <span class="hl">mapped by field.</span></h2>
     <p class="sec-intro">Most of these were team efforts. Filter by field or search. Open "How it works" on any card for the technical side.</p>
     <div class="toolbar"><input id="psearch" type="search" placeholder="Search projects (e.g. MRI, YOLO, GIS)" aria-label="Search projects">
       <div class="legend" role="group" aria-label="Filter by field"><button data-cat="all" aria-pressed="true">All</button>${Object.entries(CAT).map(([k, [n, c]]) => `<button data-cat="${k}" aria-pressed="false" style="--c:${c}"><i></i>${n}</button>`).join(" ")}</div></div>
@@ -171,10 +171,10 @@
   const recognition = `
   <section id="recognition"><div class="wrap">
     <p class="sec-k">Recognition</p>
-    <h2>Milestones <em>along the way.</em></h2>
-    <p class="scroll-hint">Scroll sideways →</p>
-    <div class="awards">${S.awards.map((a) => `<article class="award">${a.image ? `<img class="zoom${a.imageFit === "contain" ? " contain" : ""}" src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy">` : `<div class="ph">${esc((a.title.match(/^\d\w+/) || ["★"])[0])}</div>`}<div class="ab"><span class="date">${esc(a.date)}</span><h3>${esc(a.title)}</h3><p>${esc(a.detail)}</p>${ext(a.link, "Evidence ↗")}</div></article>`).join("")}</div>
-    <div class="media reveal"><div class="media-strip">${S.media.items.map((m) => `<a href="${esc(m.href)}" target="_blank" rel="noopener"><img src="${esc(m.src)}" alt="${esc(m.caption)}" loading="lazy"><span>${esc(m.caption)} ↗</span></a>`).join("")}</div><div><p class="sec-k">In the media</p><h3>BBC Arabic, Al-Mehwar TV, Al-Ahram</h3><p class="muted">${esc(S.media.text)}</p><div class="cta" style="margin-top:14px">${(S.media.videos || []).map((v) => ext(v.href, "▶ " + esc(v.label), "btn")).join("")}${ext(S.media.link, "All coverage →", "btn")}</div></div></div>
+    <h2>Milestones <span class="hl">along the way.</span></h2>
+    <p class="scroll-hint"><i class="ph ph-arrows-horizontal" aria-hidden="true"></i>Scroll sideways</p>
+    <div class="awards">${S.awards.map((a) => `<article class="award">${a.image ? `<img class="zoom${a.imageFit === "contain" ? " contain" : ""}" src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy">` : `<div class="ph">${esc((a.title.match(/^\d\w+/) || ["★"])[0])}</div>`}<div class="ab"><span class="date">${esc(a.date)}</span><h3>${esc(a.title)}</h3><p>${esc(a.detail)}</p>${ext(a.link, `Evidence <i class="ph ph-arrow-up-right" aria-hidden="true"></i>`)}</div></article>`).join("")}</div>
+    <div class="media reveal"><div class="media-strip">${S.media.items.map((m) => `<a href="${esc(m.href)}" target="_blank" rel="noopener"><img src="${esc(m.src)}" alt="${esc(m.caption)}" loading="lazy"><span>${esc(m.caption)}</span></a>`).join("")}</div><div><p class="sec-k">In the media</p><h3>BBC Arabic, Al-Mehwar TV, Al-Ahram</h3><p class="muted">${esc(S.media.text)}</p><div class="cta" style="margin-top:14px">${(S.media.videos || []).map((v) => ext(v.href, `<i class="ph ph-play-circle" aria-hidden="true"></i>${esc(v.label)}`, "btn ghost")).join("")}${ext(S.media.link, "All coverage", "btn ghost")}</div></div></div>
     <div class="certs-head"><h3>Certificates <span class="muted">(${S.certificates.length})</span></h3><div class="legend cert-filter" role="group" aria-label="Filter certificates">${[["all", "All"], ["award", "Awards"], ["research", "Research & conferences"], ["competition", "Competitions"], ["industry", "Industry training"], ["course", "Courses & workshops"]].map(([k, n], i) => `<button data-cc="${k}" aria-pressed="${!i}">${n}</button>`).join(" ")}</div></div>
     <div class="certs">${[...S.certificates].map((c, i) => [c, i]).sort(([a, i], [b, j]) => { const k = (c) => { const [y, m] = ym(c.date || ""); return y ? y * 12 + (/[A-Z][a-z]{2}/.test(c.date) ? m : 5.5) : -1; }; return k(b) - k(a) || i - j; }).map(([c]) => c).map((c) => `<figure class="cert" data-cc="${c.cat}"><button type="button" class="cert-btn" aria-label="Enlarge certificate: ${esc(c.title)}"><img class="zoom" src="${esc(S.assetBase + "assets/" + c.img)}" alt="Certificate: ${esc(c.title)}, ${esc(c.issuer)}" loading="lazy"></button><figcaption><b>${esc(c.title)}</b><span>${esc(c.issuer)}${c.date ? " · " + esc(c.date) : ""}</span></figcaption></figure>`).join("")}</div>
   </div></section>`;
@@ -185,18 +185,35 @@
     <div><p class="sec-k">Toolbox</p><h2 style="font-size:36px">Skills</h2><p class="muted">For the technical reader.</p><div class="skills">${Object.entries(S.skills).map(([k, v]) => `<div class="grp"><b>${esc(k)}</b><div class="chips">${v.split(", ").map((x) => `<span class="chip">${esc(x)}</span>`).join("")}</div></div>`).join("")}</div></div>
   </div></section>`;
 
+
+  // ---------- tagline reveal ----------
+  const TAG = "Good AI starts with honest data and ends with decisions people can trust, whether that is a neurosurgeon choosing a treatment or a city clearing its roads after a storm.";
+  const tagline = `<section class="tagline" aria-label="What I believe"><div class="wrap"><p class="tag-text heading-2">${TAG.split(" ").map((w) => `<span class="w">${esc(w)}</span>`).join(" ")}</p></div></section>`;
+
+  // ---------- FAQ ----------
+  const FAQ = [
+    ["What do you work on?", "Computer vision and multimodal AI for two fields: healthcare, where I build AI that supports neurosurgeons' treatment decisions, and transportation, where my thesis uses winter dashcam images to measure how quickly roads are cleared."],
+    ["Where are you based?", "Edmonton, Alberta, Canada. I'm a Graduate Research Fellow at the University of Alberta, and I work remotely with the neurosurgery team at Kasr Al Ainy, Cairo University."],
+    ["What is your background?", "A B.Sc. in Systems and Biomedical Engineering from Cairo University (GPA 3.7/4), internships at Siemens EDA, Siemens Healthineers and Dar Al Fouad Hospital, and an M.Sc. in Transportation Engineering in progress."],
+    ["What roles are you open to?", "Research and industry roles in applied AI and computer vision, especially in healthcare, transportation and smart cities."],
+    ["Can I see your code?", "Yes. Most projects link to their GitHub repository, and my profile is at github.com/Ziyad-HF. Some research code stays private until it is published."],
+    ["Is there a version for engineers?", "Yes. Use the technical details switch on this page, or open the terminal version and type help."],
+    ["How do I reach you?", "Email is fastest: " + S.links.email + ". You can also message me on LinkedIn."]
+  ];
+  const faq = `<section id="faq" class="alt"><div class="wrap faq-wrap"><div><p class="sec-k">Quick answers</p><h2>Questions people <span class="hl">usually ask.</span></h2></div><div class="faq">${FAQ.map(([q, a]) => `<details class="qa"><summary><span>${esc(q)}</span><i class="ph ph-plus" aria-hidden="true"></i></summary><p>${esc(a)}</p></details>`).join("")}</div></div></section>`;
+
   const L = S.links;
   const contact = `
   <section id="contact"><div class="wrap"><div class="contact reveal">
-    <div><p class="sec-k" style="color:var(--accent2)">Contact</p><h2>Let's build something <em>useful.</em></h2><p>I'm open to research and industry opportunities in applied AI and computer vision, especially in healthcare, transportation, and smart cities.</p></div>
+    <div><p class="sec-k" style="color:var(--accent2)">Contact</p><h2>Let's build something <span class="hl">useful.</span></h2><p>I'm open to research and industry opportunities in applied AI and computer vision, especially in healthcare, transportation, and smart cities.</p></div>
     <div class="clinks">
-      <button type="button" id="copy-email"><span>${esc(L.email)}</span><span id="copy-lbl">Copy</span></button>
-      ${ext(L.linkedin, "<span>LinkedIn</span><span>↗</span>")}${ext(L.github, "<span>GitHub</span><span>↗</span>")}${ext(L.lab, "<span>GeoTrans Lab profile</span><span>↗</span>")}
+      <button type="button" id="copy-email"><span>${esc(L.email)}</span><span id="copy-lbl"><i class="ph ph-copy" aria-hidden="true"></i>Copy</span></button>
+      ${ext(L.linkedin, `<span>LinkedIn</span><i class="ph ph-linkedin-logo" aria-hidden="true"></i>`)}${ext(L.github, `<span>GitHub</span><i class="ph ph-github-logo" aria-hidden="true"></i>`)}${ext(L.lab, `<span>GeoTrans Lab profile</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i>`)}
     </div>
   </div></div></section>`;
 
-  document.getElementById("app").innerHTML = hero + journey + work + timeline + projects + recognition + community + contact +
-    `<footer>© ${new Date().getFullYear()} ${esc(S.name)} · Made in Edmonton, with roots in Cairo.</footer>`;
+  document.getElementById("app").innerHTML = hero + journey + tagline + work + timeline + projects + recognition + community + faq + contact +
+    `<footer class="foot"><div class="wrap foot-in"><span>© ${new Date().getFullYear()} ${esc(S.name)} · Made in Edmonton, with roots in Cairo.</span><nav aria-label="Footer"><a href="terminal/">Terminal version</a><a href="${esc(S.links.github)}" target="_blank" rel="noopener">GitHub</a><a href="${esc(S.links.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></nav><span class="privacy">Privacy: this site uses no cookies, analytics or tracking.</span></div></footer>`;
 
   // ---------- map ----------
   const VW = 1800, VH = 690;
@@ -242,9 +259,9 @@
     document.querySelectorAll("details.tech").forEach((d) => (d.open = on));
   });
 
-  // ---------- 30-second summary ----------
+  // ---------- 30 second summary ----------
   const qv = document.createElement("dialog");
-  qv.className = "qv"; qv.setAttribute("aria-label", "30-second summary");
+  qv.className = "qv"; qv.setAttribute("aria-label", "30 second summary");
   qv.innerHTML = `<form method="dialog"><button class="qv-x" aria-label="Close">×</button></form>
     <div class="qv-head"><img src="${esc(S.photo)}" alt=""><div><h3>${esc(S.name)}</h3><p>${esc(S.headline)}<br><span class="muted">${esc(S.role)} · ${esc(S.location)}</span></p></div></div>
     <ul class="qv-list">
@@ -270,7 +287,7 @@
   const det = document.getElementById("tl-detail");
   const showEv = (i) => {
     const e = EV[i]; document.querySelectorAll(".tl-ev").forEach((b) => b.classList.toggle("sel", +b.dataset.i === i));
-    det.innerHTML = `<span class="tl-type" style="--c:${TYPES[e.type][1]}">${TYPES[e.type][0]}</span><h3>${esc(e.title)}</h3><p class="muted">${esc(e.sub)}</p>${e.image ? `<img class="tl-img zoom" src="${esc(e.image)}" alt="${esc(e.title)}">` : ""}<p class="tl-city">📍 ${esc(e.city)} · ${esc(e.date)}</p>${e.story ? `<p>${esc(e.story)}</p>` : ""}${e.points.length ? `<ul>${e.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}${e.tech ? `<details class="tech"><summary>Technical details</summary><div><ul>${e.tech.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div></details>` : ""}${ext(e.link, "Evidence ↗", "btn")}`;
+    det.innerHTML = `<span class="tl-type" style="--c:${TYPES[e.type][1]}">${TYPES[e.type][0]}</span><h3>${esc(e.title)}</h3><p class="muted">${esc(e.sub)}</p>${e.image ? `<img class="tl-img zoom" src="${esc(e.image)}" alt="${esc(e.title)}">` : ""}<p class="tl-city"><i class="ph ph-map-pin" aria-hidden="true"></i>${esc(e.city)} · ${esc(e.date)}</p>${e.story ? `<p>${esc(e.story)}</p>` : ""}${e.points.length ? `<ul>${e.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}${e.tech ? `<details class="tech"><summary>Technical details</summary><div><ul>${e.tech.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div></details>` : ""}${ext(e.link, `Evidence <i class="ph ph-arrow-up-right" aria-hidden="true"></i>`, "btn")}`;
   };
   document.querySelectorAll(".tl-ev").forEach((b) => b.addEventListener("click", () => showEv(+b.dataset.i)));
   showEv(0);
@@ -309,6 +326,24 @@
   });
   lb.addEventListener("click", (e) => { if (e.target === lb || e.target.tagName === "IMG") lb.close(); });
 
+
+  // ---------- tagline word reveal (rAF throttled) ----------
+  const words = [...document.querySelectorAll(".tag-text .w")];
+  if (reduce) words.forEach((w) => w.classList.add("on"));
+  else {
+    let ticking = false;
+    const upd = () => { const line = innerHeight * 0.72; words.forEach((w) => w.classList.toggle("on", w.getBoundingClientRect().top < line)); ticking = false; };
+    addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    upd();
+  }
+
+  // ---------- mobile menu ----------
+  const menuBtn = document.getElementById("menu-btn"), panel = document.getElementById("menu-panel");
+  const setMenu = (open) => { document.body.classList.toggle("menu-open", open); menuBtn.setAttribute("aria-expanded", open); menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu"); panel.hidden = false; panel.classList.toggle("open", open); if (!open) setTimeout(() => { if (!panel.classList.contains("open")) panel.hidden = true; }, 500); };
+  menuBtn.addEventListener("click", () => setMenu(!panel.classList.contains("open")));
+  panel.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && panel.classList.contains("open")) setMenu(false); });
+
   // ---------- reveal + counters ----------
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
@@ -338,10 +373,10 @@
     setTimeout(() => (lbl.textContent = "Copy"), 1800);
   });
   const root = document.documentElement, mbtn = document.getElementById("mode");
-  const setIcon = () => (mbtn.textContent = root.dataset.mode === "night" ? "☾" : "☀︎");
+  const setIcon = () => (mbtn.innerHTML = root.dataset.mode === "night" ? '<i class="ph ph-moon" aria-hidden="true"></i>' : '<i class="ph ph-sun" aria-hidden="true"></i>');
   setIcon();
   mbtn.addEventListener("click", () => { root.dataset.mode = root.dataset.mode === "night" ? "day" : "night"; try { localStorage.setItem("zef-atlas-mode", root.dataset.mode); } catch (e) {} setIcon(); drawLand(); });
   const navLinks = [...document.querySelectorAll(".nav ul a")];
-  const secIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { navLinks.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id)); document.querySelectorAll(".dots a").forEach((a) => a.classList.toggle("on", a.dataset.sec === e.target.id)); } }), { rootMargin: "-40% 0px -55% 0px" });
+  const secIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { navLinks.forEach((a) => { const on = a.getAttribute("href") === "#" + e.target.id; a.classList.toggle("on", on); if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); }); document.querySelectorAll(".dots a").forEach((a) => a.classList.toggle("on", a.dataset.sec === e.target.id)); } }), { rootMargin: "-40% 0px -55% 0px" });
   document.querySelectorAll("main section[id]").forEach((s) => secIO.observe(s));
 })();
