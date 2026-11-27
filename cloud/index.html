@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ziyad ElFayoumy · 3D portfolio</title>
+  <meta name="description" content="Ziyad ElFayoumy, Medical and Transportation AI Researcher. A portfolio with one 3D point cloud sculpture that reshapes itself for every chapter.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="canonical" href="https://ziyad-elfayoumy.is-a.dev/cloud/">
+  <link rel="icon" href="../shared/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziyad-elfayoumy.is-a.dev/cloud/">
+  <meta property="og:title" content="Ziyad ElFayoumy · 3D portfolio">
+  <meta property="og:description" content="Computer vision and multimodal AI for healthcare and transportation, told through a 3D point cloud.">
+  <meta property="og:image" content="https://ziyad-elfayoumy.is-a.dev/shared/assets/profile.jpg">
+  <link rel="preload" href="../shared/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../shared/assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../shared/assets/icons/phosphor.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="art" aria-hidden="true"></canvas>
+  <header class="top">
+    <a class="name" href="#intro"><i></i><span id="nm"></span></a>
+    <nav id="nav" aria-label="Chapters"></nav>
+    <div class="tools"><a class="ghost" href="../" title="Open the classic version of this site"><i class="ph ph-arrow-up-right" aria-hidden="true"></i><span>Classic site</span></a><a class="pill" id="hi" aria-label="Get in touch"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span>Get in touch</span></a></div>
+  </header>
+  <main id="main"></main>
+  <nav class="prog" id="prog" aria-label="Chapter progress"></nav>
+  <div class="cap" aria-hidden="true"><b id="cap-t"></b><span id="cap-s"></span></div>
+  <dialog class="lightbox" id="lightbox" aria-label="Image preview"><button type="button" id="lb-x" aria-label="Close">×</button><img id="lb-img" alt=""><p id="lb-cap"></p></dialog>
+  <script>window.ASSET_BASE = "../shared/";</script>
+  <script src="../shared/content.js"></script>
+  <script src="../shared/world.js"></script>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

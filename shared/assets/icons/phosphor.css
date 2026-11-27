@@ -6,6 +6,7 @@
 .ph.ph-arrow-up-right:before { content: "\e092"; }
 .ph.ph-arrows-horizontal:before { content: "\eb06"; }
 .ph.ph-copy:before { content: "\e1ca"; }
+.ph.ph-cube:before { content: "\e1da"; }
 .ph.ph-envelope-simple:before { content: "\e218"; }
 .ph.ph-github-logo:before { content: "\e576"; }
 .ph.ph-linkedin-logo:before { content: "\e2ee"; }

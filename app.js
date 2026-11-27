@@ -197,7 +197,7 @@
     ["What is your background?", "A B.Sc. in Systems and Biomedical Engineering from Cairo University (GPA 3.7/4), internships at Siemens EDA, Siemens Healthineers and Dar Al Fouad Hospital, and an M.Sc. in Transportation Engineering in progress."],
     ["What roles are you open to?", "Research and industry roles in applied AI and computer vision, especially in healthcare, transportation and smart cities."],
     ["Can I see your code?", "Yes. Most projects link to their GitHub repository, and my profile is at github.com/Ziyad-HF. Some research code stays private until it is published."],
-    ["Is there a version for engineers?", "Yes. Use the technical details switch on this page, or open the terminal version and type help."],
+    ["Is there a version for engineers?", "Yes. Turn on the technical details switch on this page. There is also a 3D version of this site, linked in the menu."],
     ["How do I reach you?", "Email is fastest: " + S.links.email + ". You can also message me on LinkedIn."]
   ];
   const faq = `<section id="faq" class="alt"><div class="wrap faq-wrap"><div><p class="sec-k">Quick answers</p><h2>Questions people <span class="hl">usually ask.</span></h2></div><div class="faq">${FAQ.map(([q, a]) => `<details class="qa"><summary><span>${esc(q)}</span><i class="ph ph-plus" aria-hidden="true"></i></summary><p>${esc(a)}</p></details>`).join("")}</div></div></section>`;
@@ -213,7 +213,7 @@
   </div></div></section>`;
 
   document.getElementById("app").innerHTML = hero + journey + tagline + work + timeline + projects + recognition + community + faq + contact +
-    `<footer class="foot"><div class="wrap foot-in"><span>© ${new Date().getFullYear()} ${esc(S.name)} · Made in Edmonton, with roots in Cairo.</span><nav aria-label="Footer"><a href="terminal/">Terminal version</a><a href="${esc(S.links.github)}" target="_blank" rel="noopener">GitHub</a><a href="${esc(S.links.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></nav><span class="privacy">Privacy: this site uses no cookies, analytics or tracking.</span></div></footer>`;
+    `<footer class="foot"><div class="wrap foot-in"><span>© ${new Date().getFullYear()} ${esc(S.name)} · Made in Edmonton, with roots in Cairo.</span><nav aria-label="Footer"><a href="cloud/">3D version</a><a href="${esc(S.links.github)}" target="_blank" rel="noopener">GitHub</a><a href="${esc(S.links.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></nav><span class="privacy">Privacy: this site uses no cookies, analytics or tracking.</span></div></footer>`;
 
   // ---------- map ----------
   const VW = 1800, VH = 690;
